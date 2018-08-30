@@ -8,6 +8,8 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     # when this method is called it should assign the song's artist to Drake
-      self.find_by
+            self.find_or_create_by(artist: 'Drake') do |c|
+  c.locked = false
+end
   end
 end
